@@ -15,6 +15,7 @@
 		48F68C1721D3A74600E16E5B /* MemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F68C1621D3A74600E16E5B /* MemoAppTests.swift */; };
 		48F68C2221D3A74700E16E5B /* MemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F68C2121D3A74700E16E5B /* MemoAppUITests.swift */; };
 		48F68C3021D47F8D00E16E5B /* MemoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F68C2F21D47F8D00E16E5B /* MemoAPI.swift */; };
+		48F68C3221D485C600E16E5B /* MemoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F68C3121D485C600E16E5B /* MemoFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		48F68C2121D3A74700E16E5B /* MemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAppUITests.swift; sourceTree = "<group>"; };
 		48F68C2321D3A74700E16E5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F68C2F21D47F8D00E16E5B /* MemoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAPI.swift; sourceTree = "<group>"; };
+		48F68C3121D485C600E16E5B /* MemoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				48F68C2F21D47F8D00E16E5B /* MemoAPI.swift */,
 				48F68C0321D3A73F00E16E5B /* ViewController.swift */,
 				48F68C0521D3A73F00E16E5B /* Main.storyboard */,
+				48F68C3121D485C600E16E5B /* MemoFile.swift */,
 				48F68C0821D3A74600E16E5B /* Assets.xcassets */,
 				48F68C0121D3A73F00E16E5B /* AppDelegate.swift */,
 				48F68C0A21D3A74600E16E5B /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				48F68C0421D3A73F00E16E5B /* ViewController.swift in Sources */,
 				48F68C3021D47F8D00E16E5B /* MemoAPI.swift in Sources */,
 				48F68C0221D3A73F00E16E5B /* AppDelegate.swift in Sources */,
+				48F68C3221D485C600E16E5B /* MemoFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
