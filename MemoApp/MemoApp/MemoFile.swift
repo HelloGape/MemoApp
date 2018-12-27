@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 class MemoFile : UIViewController {
+    @IBOutlet weak var memo: UITextView!
+    
     override func viewDidLoad() {
+    }
+    @IBAction func saveMemo(_ sender: Any) {
+        MemoAPI.shard.addTheData(new: memo.text)
+        UserDefaults.standard.set(MemoAPI.shard.getMainList(), forKey: "memoData")
     }
 }

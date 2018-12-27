@@ -18,7 +18,7 @@ class MemoAPI : UIViewController {
         return mainMemoList
     }
     func addTheData(new : String) -> Array<String> {
-        mainMemoList.append(new)
+        mainMemoList.insert(new, at: 0)
         return mainMemoList
     }
 }

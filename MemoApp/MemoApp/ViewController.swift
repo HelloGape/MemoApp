@@ -17,7 +17,11 @@ class ViewController: UIViewController {
         MemoCList.dataSource = self
         MemoCList.delegate = self
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.MemoCList.reloadData()
+        }
+    }
     @IBAction func createNewMemo(_ sender: Any) {
         
     }
@@ -37,4 +41,6 @@ extension ViewController : UITableViewDataSource {
     }
 }
 extension ViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
 }
