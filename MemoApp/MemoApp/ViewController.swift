@@ -25,6 +25,13 @@ class ViewController: UIViewController {
     @IBAction func createNewMemo(_ sender: Any) {
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "savedMemo" {
+            if let sendData = segue.destination as? MemoFile{
+                sendData.getData = sender as? String ?? ""
+            }
+        }
+    }
 }
 
 extension ViewController : UITableViewDataSource {
@@ -34,6 +41,7 @@ extension ViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
+        
         if let addCellName : UILabel = cell.viewWithTag(1) as? UILabel {
             addCellName.text = MemoAPI.shard.getMainList()[indexPath.row]
         }
@@ -42,5 +50,7 @@ extension ViewController : UITableViewDataSource {
 }
 extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memoData  = MemoAPI.shard.getMainList()[indexPath.row]
+        performSegue(withIdentifier: "savedMemo", sender: memoData )
     }
 }

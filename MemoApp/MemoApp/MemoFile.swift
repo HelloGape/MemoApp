@@ -12,7 +12,9 @@ import UIKit
 class MemoFile : UIViewController {
     @IBOutlet weak var memo: UITextView!
     
+    var getData : String = ""
     override func viewDidLoad() {
+        memo.text = getData
     }
     @IBAction func saveMemo(_ sender: Any) {
         MemoAPI.shard.addTheData(new: memo.text)
