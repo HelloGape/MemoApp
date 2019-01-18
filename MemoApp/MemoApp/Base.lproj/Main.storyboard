@@ -47,13 +47,14 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKa-54-jNQ">
-                                <rect key="frame" x="266" y="526" width="30" height="30"/>
+                                <rect key="frame" x="266" y="525" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="추가">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7as-iC-5WZ" kind="show" identifier="addButton" id="pPe-Ez-PiQ"/>
+                                    <action selector="addData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="frf-9H-KRz"/>
+                                    <segue destination="7as-iC-5WZ" kind="show" identifier="addButton" id="fpI-Hh-fzz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,18 +89,30 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSI-fW-3b2">
                                 <rect key="frame" x="249" y="48" width="71" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="완료">
+                                <state key="normal" title="저장">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="saveMemo:" destination="7as-iC-5WZ" eventType="touchUpInside" id="0HP-bW-gaC"/>
+                                    <segue destination="UBa-V4-km5" kind="show" id="BwM-ux-Gf9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-et-CaV">
+                                <rect key="frame" x="261" y="123" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="삭제">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButton:" destination="7as-iC-5WZ" eventType="touchUpInside" id="Z6R-pS-TWM"/>
+                                    <segue destination="UBa-V4-km5" kind="show" id="bR7-oA-hym"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,6 +154,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pPe-Ez-PiQ"/>
+        <segue reference="bR7-oA-hym"/>
+        <segue reference="fpI-Hh-fzz"/>
     </inferredMetricsTieBreakers>
 </document>
