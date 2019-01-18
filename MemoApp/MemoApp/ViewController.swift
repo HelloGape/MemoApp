@@ -1,4 +1,3 @@
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -17,23 +16,16 @@ class ViewController: UIViewController {
         }
     }   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "savedMemo" {
-            
-        } else if segue.identifier == "addButton" {
-            
-        }
     }
     @IBAction func addData(_ sender: Any) {
         UserDefaults.standard.set(-1, forKey: "MemoNumber")
     }
-    
 }
 extension ViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         MemoData = UserDefaults.standard.object(forKey: "MemoData") as? [String] ?? [""]
         return MemoData.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
         

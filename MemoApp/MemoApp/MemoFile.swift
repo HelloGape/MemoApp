@@ -21,12 +21,12 @@ class MemoFile : UIViewController {
             memoData.remove(at: MemoNumber)
             memoData.insert(memo.text, at: MemoNumber)
             UserDefaults.standard.set(memoData, forKey: "MemoData")
+            //물어볼거 -> API에 추가하려면?
         }
     }
     @IBAction func deleteButton(_ sender: Any) {
         let MemoNumber = UserDefaults.standard.object(forKey: "MemoNumber") as! Int
         if MemoNumber == -1 {
-            
         }else {
             memoData.remove(at: MemoNumber)
             UserDefaults.standard.set(memoData, forKey: "MemoData")
