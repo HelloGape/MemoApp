@@ -33,6 +33,8 @@ extension ViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
         if let addDate : UILabel = cell.viewWithTag(2) as? UILabel{
+         
+            
             
         }
         if let addCellName : UILabel = cell.viewWithTag(1) as? UILabel {
