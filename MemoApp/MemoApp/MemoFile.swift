@@ -1,35 +1,33 @@
-import Foundation
 import UIKit
 
 class MemoFile : UIViewController {
     @IBOutlet weak var memo: UITextView!
-    let memoNumber = UserDefaults.standard.object(forKey: "MemoNumber") as! Int
+    
+    let MemoNumber = UserDefaults.standard.object(forKey: "MemoNumber") as! Int
     var memoData = UserDefaults.standard.object(forKey: "MemoData") as? [String] ?? [String]()
     
     override func viewDidLoad() {
-        if memoNumber == -1 {
+        if MemoNumber == -1 {
             memo.text = ""
         } else {
-            memo.text = memoData[memoNumber]
+            memo.text = memoData[MemoNumber]
         }
     }
     @IBAction func saveMemo(_ sender: Any) {
-        let MemoNumber = UserDefaults.standard.object(forKey: "MemoNumber") as! Int
+        
         if MemoNumber == -1 {
             MemoAPI.shard.addTheData(new: memo.text)
         }else {
-            memoData.remove(at: MemoNumber)
-            memoData.insert(memo.text, at: MemoNumber)
-            UserDefaults.standard.set(memoData, forKey: "MemoData")
-            //물어볼거 -> API에 추가하려면?
+            MemoAPI.shard.changeData(new: memo.text)
+            addRealmData(Title: memo.text, Text: memo.text, Date: Date())
         }
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func deleteButton(_ sender: Any) {
-        let MemoNumber = UserDefaults.standard.object(forKey: "MemoNumber") as! Int
         if MemoNumber == -1 {
         }else {
-            memoData.remove(at: MemoNumber)
-            UserDefaults.standard.set(memoData, forKey: "MemoData")
+            MemoAPI.shard.deleteData()
         }
+        self.navigationController?.popViewController(animated: true)
     }
 }
